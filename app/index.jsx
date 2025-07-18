@@ -1,19 +1,31 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
-import Logo from "../assets/image/ISL WHITE.png"
+import Logo from "../assets/image/Logo-Black.png"
 import { Link } from 'expo-router';
+import ThemedView from '../components/ThemedView';
+import ThemedLogo from '../components/ThemedLogo';
+import Spacer from '../components/Spacer';
+import ThemedText from '../components/ThemedText';
 
 const Home = () => {
 
   return (
-    <View style={styles.container}>
-        <Image source={Logo} style={styles.logo} />
-      <Text style={styles.title}>Home</Text>
-      <Text style={styles.text}>Reading List App</Text>
+    <ThemedView style={styles.container}>
+        <ThemedLogo style={styles.logo} />
+        <Spacer height={20}/>
+      <ThemedText  style={styles.title}>Home</ThemedText>
+      <ThemedText style={styles.text}>Reading List App</ThemedText>
+      <Spacer />
   
-    <Link href="/about" style={styles.link}>About Page</Link>
-    <Link href="/contact" style={styles.link}>Contact Page</Link>
+    <Link href="/about" style={styles.link}>
+   <ThemedText> About Page
+    </ThemedText>
+    </Link>
+    <Link href="/contact" style={styles.link}>
+    <ThemedText>   Contact Page
+    </ThemedText>
+  </Link>
     
-    </View>
+    </ThemedView>
   );
 }
 
@@ -42,9 +54,8 @@ const styles = StyleSheet.create({
         margin: 10,
         boxShadow : '4px 4px 4px 4px rgba(0, 0, 0, 0.1)'
     },
-    logo: {
-        marginVertical: 20,
-        width: 300,
+    logo: {    
+        width: 100,
         height: 100,
 
 
